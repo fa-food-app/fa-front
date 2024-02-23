@@ -1,0 +1,28 @@
+<div class="cointainer">
+    <div class="row pt-3">
+        <div class="col-md-3"  *ngFor="let alimento of alimentos">
+                <div class="card" style="width: 18rem;">
+                    <img [src]="alimento.imagen" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{alimento.nombre}}</h5>
+                        <span class="card-text mr-4">{{alimento['categoria'].nombre}}</span>
+                        <div class="float-right">
+                            <a href="/home/detalle/{{alimento.codigo}}"  class="btn btn-green">Ver mas</a>
+                        </div>
+                    </div>
+                </div>
+     
+       
+        </div>
+    </div>
+   
+<div class="row d-flex justify-content-center p-2">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+             
+              <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+          </nav>
+    </div>
+</div>

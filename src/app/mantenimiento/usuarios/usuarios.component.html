@@ -1,0 +1,78 @@
+
+<div *ngIf="!cargando" class="text-center">
+  <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <a  [routerLink]="['/admin/usuarios/nuevo']" class="btn btn-primary">Nuevo usuario</a>
+  </div>
+  <div class="col-md-4">
+    <h3>Total de usuarios <small>{{total}}</small></h3>
+  </div>
+  <div class="col-md-6">
+    <input class="form-control" placeholder="Buscar usuarios..." (keyup)="buscar(txtTermino.value)" #txtTermino>
+  </div>
+</div>
+
+
+<div class="row p-4">
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Acciones</th>
+            <th scope="col">Id</th>
+            <th scope="col">Img</th>
+            <th class="col" scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let usuario of usuarios">
+          <tr >
+            <td scope="row">
+              <a class="btn btn-sm btn-danger"(click)="eliminarUsuario(usuario)"><i class="fas fa-trash"></i></a>&nbsp;
+              <a *ngIf="!usuario.activo" class="btn btn-sm btn-success"(click)="activarUsuario(usuario)">activar</a>
+            </td>
+            <td>{{usuario.id}}</td>
+            <td class="text-center">
+              <img class="img-avatar cursor"
+              alt="Avatar de usuario"
+               [src]="usuario.imagenUrl"
+               (click)="abrirModal(usuario)"
+                >
+          </td>
+       
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.email}}</td>
+            <td>
+              <select class="form-select"[(ngModel)]="usuario.id_rol" (change)="cambiarRol(usuario)">
+                <option value="1">Administrador</option>
+                <option value="2">Usuario</option>
+              </select>
+          </td>
+            <td *ngIf="usuario.activo">
+              <span class="badge bg-success">Activo</span>
+            </td>
+            <td *ngIf="!usuario.activo">
+              <span class="badge bg-danger">Inactivo</span>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+      <nav *ngIf="txtTermino.value.length === 0" aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><button (click)="cargarPagina(-6)" class="page-link">Anterior</button></li>
+       
+          <li class="page-item"><button (click)="cargarPagina(6)" class="page-link">Siguiente</button></li>
+        </ul>
+      </nav>
+
+</div>
