@@ -3,10 +3,26 @@
     list-style: none;
 }
 :root{
+  --color-primary:#133133;
+  --color--secondary:#4CA02F;
+  --color-tertiary:#F4F8F9;
+  --color--primary--hover:#0c1f20;
   --color-text:#133133;
+  --white:#fff;
 }
 body{
   font-family: "Inter", sans-serif;
+  color: var(--color-text);
+}
+figure{
+  text-align: center;
+}
+.copy{
+  position: absolute;
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  bottom: 16px;
 }
 .wrapper{
   max-width: 1440px;
@@ -22,13 +38,38 @@ body{
 /* AUTH */
 .auth{
   display: grid;
+  height: 100vh;
   grid-template-columns: repeat(2,1fr);
+  align-items: center;
 }
 .auth__content{
   display: flex;
   flex-direction: column;
-  padding: 169px 180px;
+  max-width: 318px;
+  margin: 0 auto;
+  /* padding: 169px 180px; */
+  gap: 16px;
 
+}
+.auth__ilustration{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-tertiary);
+}
+.button-primary{
+  background-color: var(--color-primary);
+  color: var(--white);
+  padding:10px;
+}
+.button-primary:hover{
+  color: var(--white);
+  background-color: var(--color--primary--hover);
+}
+.link{
+  color: var(--color--secondary);
 }
 .active-admin{
     background-color: #4CA02F;
@@ -57,13 +98,8 @@ a{
     padding: 10px;
     display: block;
 }
-
 .bg-blue-light{
     background-color:#F4F8F9;
-}
-.btn-blue{
-    background-color: #4558FF;
-    color: white;
 }
 .p-32{
     padding: 0px 32px;
@@ -390,6 +426,9 @@ h3{
   }
   /* Responsive Design */
   @media all and (max-width: 240px) {
+    .auth__ilustration{
+      display: none;
+    }
     .toast-container .ngx-toastr.div {
       padding: 8px 8px 8px 50px;
       width: 11em;
@@ -400,7 +439,18 @@ h3{
     }
   }
   @media all and (min-width: 241px) and (max-width: 480px) {
+    .auth{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
 
+    }
+    .auth__content{
+      width: 100%;
+      max-width: 100%;
+    }
+    .auth__ilustration{
+      display: none;
+    }
     .toast-container .ngx-toastr.div {
       padding: 8px 8px 8px 50px;
       width: 18em;
