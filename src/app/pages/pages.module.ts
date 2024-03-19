@@ -13,6 +13,9 @@ import pdfFonts from "pdfmake/build/vfs_fonts"; // fonts provided for pdfmake
 import { ChartsModule } from 'ng2-charts';
 import { GraficaComponent } from '../components/grafica/grafica.component';
 import { ScatterComponent } from '../components/scatter/scatter.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 
 
@@ -27,7 +30,9 @@ PdfMakeWrapper.setFonts(pdfFonts)
     DetalleComponent,
     GraficaComponent,
     ScatterComponent,
-  
+    LandingPageComponent,
+    FooterComponent,
+    NavbarComponent
    
   ],
   exports: [
