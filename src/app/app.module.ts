@@ -16,9 +16,7 @@ import {  BrowserAnimationsModule  }  from  '@angular/platform-browser/animation
 @NgModule({
   declarations: [
     AppComponent,
-    NotfoundComponent,
-  
-    
+    NotfoundComponent    
   ],
  
   imports: [

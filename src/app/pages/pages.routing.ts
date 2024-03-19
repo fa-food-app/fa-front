@@ -6,6 +6,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { DetalleComponent } from './catalogo/detalle.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 //mantenimiento
@@ -22,7 +23,11 @@ const routes:Routes = [
          {path:'detalle/:id',component:DetalleComponent},
          {path:'**', component:NotfoundComponent }
         ]
-     }
+    },
+    {
+        path: '',
+        component: LandingPageComponent
+    }
     
 ];
 
