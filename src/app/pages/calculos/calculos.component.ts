@@ -1,6 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 import { delay } from 'rxjs/operators';
 
 
@@ -88,7 +88,7 @@ export class CalculosComponent implements OnInit {
     private AminoacidoService: AminoacidoService,
     private azucarService: AzucarService,
     private pdf: DocumentoService,
-    private toastr: ToastrService
+    // private toastr: ToastrService
    ) { }
 
 
@@ -243,7 +243,7 @@ export class CalculosComponent implements OnInit {
         densy = data['density'];
         speci = data['specifici'];
         this.statusPdf = true;
-        this.toastr.success('Exito', 'Resultados obtenidos!');
+        // this.toastr.success('Exito', 'Resultados obtenidos!');
         this.display = true;
       })
   }

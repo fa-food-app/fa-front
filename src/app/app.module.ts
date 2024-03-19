@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import {  BrowserAnimationsModule  }  from  '@angular/platform-browser/animations' ;
 
-import { ToastrModule } from 'ngx-toastr';
+// import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     MantenimientoModule,
     AuthModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    // ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
