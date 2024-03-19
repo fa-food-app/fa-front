@@ -16,6 +16,7 @@ import { ScatterComponent } from '../components/scatter/scatter.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
+import { CardPriceComponent } from '../shared/card-price/card-price.component';
 
 
 
@@ -32,7 +33,8 @@ PdfMakeWrapper.setFonts(pdfFonts)
     ScatterComponent,
     LandingPageComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardPriceComponent
    
   ],
   exports: [
