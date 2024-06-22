@@ -1,0 +1,55 @@
+<h3 class="text-4xl my-4">{{title}}</h3>
+
+<form [formGroup]="form" class="w-full"  (submit)="onSubmit()">
+    <section class="w-full flex flex-wrap gap-4">
+            <div class="w-1/2 max-w-[50%]">
+                <div class="mb-5">
+                    <label for="nombre" class="label">Nombre (*)</label>
+                    <input type="text" formControlName="nombre" id="nombre" class="input" placeholder="Nombre del plan" required />
+                  </div>
+                  <div class="mb-5">
+                    <label for="precio" class="label">Precio (*)</label>
+                    <input type="number"formControlName="precio" id="precio" class="input" placeholder="Precio" required />
+                  </div>
+                  <div class="mb-5">
+                      <label for="countries" class="label">Seleccione el tipo de plan (*)</label>
+                      <select id="countries" class="select" formControlName="tipoDePlan">
+                          <option selected value="" >--Seleccionar uno ---</option>
+                          <option selected value="Mensual">Mensual</option>
+                          <option value="Anual">Anual</option>
+                      </select>
+                  </div>
+                  <div class="mb-5">
+                    <label for="nombre" class="label">Caracteristicas (*)</label>
+                    <div class="flex">
+                        <input type="text" id="nombre" [formControl]="newCaracteristica" class="input me-2" placeholder="Escriba una caracteristica" required />
+                        <button type="button" class="btn--default" (click)="onAddCaracteristica()">Agregar</button>
+                    </div>
+                  
+                </div>
+                <div class="mg-5">
+                    <label class="inline-flex items-center mb-5 cursor-pointer">
+                        <input type="checkbox" formControlName="activo" class="sr-only peer">
+                        <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Quiere mostrar este plan en la pagina principal?</span>
+                      </label>
+                </div>
+            </div>
+            <div class="w-1/2 max-w-[45%]">
+                <div class="mb-5" formArrayName="caracteristicas">
+                    <label for="nombre" class="label">Caracteristicas (*)</label>
+                    <div class="flex mb-4 flex-col" *ngFor="let caracterista of caracteristicas.controls;let i=index">
+                        <div class="flex">
+                            <input type="text"  id="nombre" [formControlName]="i" class="input me-2" placeholder="Escriba una caracteristica" required />
+                            <button (click)="onDeleteCaracteristica(i)" type="button" class="btn--red--outline">Eliminar</button>
+                        </div>
+                        <p *ngIf="isValidFieldInArray(caracteristicas,i)" class="block w-full text-red-600">
+                            Este campo es requerido
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+        <button type="button" class="btn--red" (click)="onReturn()">Cancelar</button>
+        <button type="submit" class="btn--green">Guardar</button>
+</form>

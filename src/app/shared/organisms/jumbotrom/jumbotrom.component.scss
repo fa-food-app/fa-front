@@ -1,0 +1,16 @@
+.jumbotrom{
+    background-color: #F4F8F9;
+    height: 230px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &__content{
+        @apply flex flex-wrap justify-center gap-4 mx-auto;
+        
+    }
+}
+
+.form__select{
+    @apply w-96;
+}

@@ -1,0 +1,179 @@
+
+    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400" id="tabs-example" #tabexample role="tablist">
+            <li class="me-2" role="presentation">
+                <button class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                    id="profile-tab-example"
+                    type="button"
+                    role="tab"
+                    aria-controls="profile-example"
+                    aria-selected="false"
+                >
+                    Analisis proximal
+                </button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                    id="dashboard-tab-example"
+                    type="button"
+                    role="tab"
+                    aria-controls="dashboard-example"
+                    aria-selected="false"
+                >
+                    Minerales
+                </button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button
+                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                    id="settings-tab-example"
+                    type="button"
+                    role="tab"
+                    aria-controls="settings-example"
+                    aria-selected="false"
+                >
+                    Vitaminas
+                </button>
+            </li>
+            <li role="presentation">
+                <button
+                    class="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-gray-300 hover:text-gray-600 dark:hover:text-gray-300"
+                    id="contacts-tab-example"
+                    type="button"
+                    role="tab"
+                    aria-controls="contacts-example"
+                    aria-selected="false"
+                >
+                    Acidos Grasos
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id="tabContentExample">
+        <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="profile-example"role="tabpanel" aria-labelledby="profile-tab-example">
+            <div class="flow-root">
+                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Humedad (G)" [value]="alimento?.humedad" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Energia (kcal)" [value]="alimento?.energiaKcal" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Energia (kj)" [value]="alimento?.energiakJ" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Proteina (G)" [value]="alimento?.proteinaG" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Lipidos (G)" [value]="alimento?.lipidosG" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Carbohidratos totales (g)" [value]="alimento?.carbohidratosTotal" />
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <app-nav-list-item title="Carbohidratos disponibles (g)" [value]="alimento?.carbohidratosDisp" />
+                    </li>
+                    <li class="pt-3 pb-0 sm:pt-4">
+                        <app-nav-list-item title="Fibra Dietaria (g)" [value]="alimento?.fibraDietaria" />
+                    </li>
+                    <li class="pt-3 pb-0 sm:pt-4">
+                        <app-nav-list-item title="Cenizas (g)" [value]="alimento?.cenizas" />
+                    </li>
+                </ul>
+           </div>
+        </div>
+        <div
+            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
+            id="dashboard-example"
+            role="tabpanel"
+            aria-labelledby="dashboard-tab-example"
+        >
+        <div class="flow-root">
+            <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Calcio (G)" [value]="alimento?.calcio" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Hierro (kcal)" [value]="alimento?.hierro" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Sodio (kj)" [value]="alimento?.sodio" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Fosforo (G)" [value]="alimento?.fosforo" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Yodo (G)" [value]="alimento?.yodo" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Zinc (g)" [value]="alimento?.zinc" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Magnesio(g)" [value]="alimento?.magnesio" />
+                </li>
+                <li class="pt-3 pb-0 sm:pt-4">
+                    <app-nav-list-item title="Potacio (g)" [value]="alimento?.potasio" />
+                </li>
+            </ul>
+       </div>
+        </div>
+        <div
+            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
+            id="settings-example"
+            role="tabpanel"
+            aria-labelledby="settings-tab-example"
+        >
+        <div class="flow-root">
+            <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Tiamina " [value]="alimento?.tiamina" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Riboflaxina " [value]="alimento?.riboflaxina" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Niaxina " [value]="alimento?.niaxina" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Folatos " [value]="alimento?.folatos" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Vitamina B12 " [value]="alimento?.vitaminaB12" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Vitamina A " [value]="alimento?.vitaminaA" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Vitamina C " [value]="alimento?.vitaminaC" />
+                </li>
+            </ul>
+       </div>
+        </div>
+        <div
+            class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800"
+            id="contacts-example"
+            role="tabpanel"
+            aria-labelledby="contacts-tab-example"
+        >
+        <div class="flow-root">
+            <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Grasa satutara (G)" [value]="alimento?.grasaSaturada" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Grasa menos saturada (G)" [value]="alimento?.grasaMenosSaturada" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Grasa poliinsaturada (G)" [value]="alimento?.grasaPoliinsaturada" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Colesterol (G)" [value]="alimento?.colesterol" />
+                </li>
+                <li class="py-3 sm:py-4">
+                    <app-nav-list-item title="Parte comestible (G)" [value]="alimento?.parteComestible" />
+                </li>
+            </ul>
+       </div>
+        </div>
+    </div>

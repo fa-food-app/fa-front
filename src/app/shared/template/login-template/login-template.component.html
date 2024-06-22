@@ -1,0 +1,31 @@
+<form [formGroup]="form" class="auth" (submit)="send()">
+    <a [routerLink]="['/']">
+        <app-logotipo/>
+    </a>
+    <h3 class="auth__title">Iniciar sesion</h3>
+    <p class="auth__block">Ingrese su email y contraseña para iniciar sesion</p>
+        <div class="auth__block">
+            <label for="email" class="label">Email</label>
+            <input formControlName="email" type="text" id="email" class="input" placeholder="Email" />
+            <span *ngIf="isValidField('email')" class="text-red-600">
+                {{getFieldError('email')}}
+            </span>
+        </div>
+        <div class="auth__block">
+            <label for="password" class="label">Contraseña</label>
+            <input formControlName="password" type="password" id="password" class="input" placeholder="Contraseña" />
+            <span *ngIf="isValidField('password')" class="text-red-600">
+                {{getFieldError('password')}}
+            </span>
+        </div>
+        <p class="auth__block">
+            <a href="" class="text-green-500 ">¿Olvidaste tu contraseña?</a>
+        </p>
+        <div class="auth__block">
+            <button class="block w-full btn--dark" type="submit">Acceder</button>
+        </div>
+        <p class="auth__block">
+            <span class="me-2">No tienes una cuenta</span>
+            <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active"  class="text-green-500 ">Registrate</a>
+        </p>
+</form>

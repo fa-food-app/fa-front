@@ -1,0 +1,17 @@
+.content{
+    @apply grid grid-flow-col grid-cols-12 p-4 gap-4 sm:grid-flow-row;
+
+    &__properties{
+        @apply col-span-4;
+    }
+
+    &__food{
+        @apply col-span-8;
+    }
+}
+
+#defaultTabContent{
+    div{
+        padding: 0 !important;
+    }
+}
