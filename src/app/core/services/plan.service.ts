@@ -13,10 +13,10 @@ export class PlanService {
   constructor(private http: HttpClient) {}
 
   registrarPlan(plan:Plan):Observable<Plan>{
+    delete plan.id;
     return this.http.post<Plan>(`${this.url}/planes`,plan)
   }
   actualizarPlan(id:string,plan:Plan):Observable<Plan>{
-    delete plan.id;
     return this.http.patch<Plan>(`${this.url}/planes/${id}`,plan)
   }
   getPlanes():Observable<Plan[]>{
