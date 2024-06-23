@@ -6,6 +6,8 @@ import { AlimentoDetail, Alimento } from '../interfaces';
 import { PaginationDto } from '../interfaces/pagination.interface';
 import { CalcularPropiedades } from '../interfaces/calcular-pripiedades.interface';
 import { PropiedadesTermicas } from '../interfaces/propiedades-termica.interface';
+import { Aminoacido } from '../interfaces/aminoacido.interface';
+import { Azucar } from '../interfaces/azucar.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +31,14 @@ export class AlimentoService {
   getAlimentoPorId(id: string): Observable<AlimentoDetail> {
     return this.http.get<AlimentoDetail>(`${this.url}/alimentos/${id}`);
   }
+
+  getAzucar(id: string): Observable<Azucar> {
+    return this.http.get<Azucar>(`${this.url}/alimentos/azucar/${id}`);
+  }
+  getAminoacido(id: string): Observable<Aminoacido> {
+    return this.http.get<Aminoacido>(`${this.url}/alimentos/aminoacido/${id}`);
+  }
+
 
   search(nombre: string): Observable<AlimentoDetail[]> {
     return this.http.get<AlimentoDetail[]>(

@@ -11,6 +11,8 @@ import { NavListItemComponent } from '@app/shared/molecules/nav-list-item/nav-li
 import { Tabs } from 'flowbite';
 import type { TabsOptions, TabsInterface, TabItem } from 'flowbite';
 import type { InstanceOptions } from 'flowbite';
+import { Aminoacido } from '../../../core/interfaces/aminoacido.interface';
+import { Azucar } from '@app/core/interfaces/azucar.interface';
 @Component({
   selector: 'app-tab-nav',
   standalone: true,
@@ -21,6 +23,10 @@ import type { InstanceOptions } from 'flowbite';
 export class TabNavComponent implements AfterViewInit {
   @Input()
   alimento?: AlimentoDetail;
+  @Input()
+  azucar?: Azucar;
+  @Input()
+  aminoacido?: Aminoacido;
 
   @ViewChild('tabexample')
   tagNav!: ElementRef<HTMLElement>;
@@ -35,6 +41,11 @@ export class TabNavComponent implements AfterViewInit {
     this.selectTabElements();
     this.selectOption();
     this.setInstance();
+    console.log( this.tagNav.nativeElement,
+      this.tabElements,
+      this.options,
+      this.instanceOptions);
+    
     this.tabs = new Tabs(
       this.tagNav.nativeElement,
       this.tabElements,
@@ -75,6 +86,20 @@ export class TabNavComponent implements AfterViewInit {
         ) as HTMLElement,
         targetEl: document.querySelector('#contacts-example') as HTMLElement,
       },
+      {
+        id: 'azucar',
+        triggerEl: document.querySelector(
+          '#azucar-tab-example'
+        ) as HTMLElement,
+        targetEl: document.querySelector('#azucar-example') as HTMLElement,
+      },
+      {
+        id: 'aminoacido',
+        triggerEl: document.querySelector(
+          '#aminoacido-tab-example'
+        ) as HTMLElement,
+        targetEl: document.querySelector('#aminoacido-example') as HTMLElement,
+      },
     ];
   }
 
@@ -86,6 +111,8 @@ export class TabNavComponent implements AfterViewInit {
       inactiveClasses:
         'text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300',
       onShow: () => {
+        console.log('show');
+        
       },
     };
   }

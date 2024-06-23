@@ -38,8 +38,10 @@
     }
     </div>
     <div class="content__food" > 
-        <h3 class="title">Alimento seleccionado: @if(alimento){ <span class="text-2xl mx-2 text-green-500">{{alimento.nombre}}</span> } </h3>     
-        <app-tab-nav [alimento]="alimento"/>
+    
+        <h3 class="title">Alimento seleccionado: @if(alimento){ <span class="text-2xl mx-2 text-green-500">{{alimento.nombre}}</span>         @if(propiedades){  <button class="btn--dark--outline" (click)="generatePdf(alimento)">Generar pdf</button>}    } </h3> 
+        
+        <app-tab-nav [alimento]="alimento" [azucar]="azucar" [aminoacido]="aminoacido"/>
     </div>
     }
 </div>
