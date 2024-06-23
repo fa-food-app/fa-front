@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 .title{
-   @apply w-max text-center text-lg font-semibold;
+   @apply w-max text-center text-lg font-semibold w-full flex justify-between;
 }
 
 .card{
