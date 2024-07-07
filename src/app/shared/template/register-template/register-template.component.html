@@ -1,0 +1,45 @@
+<form [formGroup]="form" class="auth" (submit)="send()"  autocomplete="off">
+    <a [routerLink]="['/']">
+        <app-logotipo/>
+    </a>
+    <h3 class="auth__title">Crear una cuenta</h3>
+    <p class="auth__block">Completa todos los campos para crear una cuenta.</p>
+        <div class="auth__block">
+            <label for="nombres" class="label">Nombre y apellidos</label>
+            <input formControlName="nombres" type="text" id="nombres" class="input" placeholder="Nombre completo" required />
+            <span *ngIf="isValidField('nombres')" class="text-red-600">
+                {{getFieldError('nombres')}}
+            </span>
+        </div>
+        <div class="auth__block">
+            <label for="email" class="label">Email</label>
+            <input formControlName="email" type="text" id="email" class="input" placeholder="Email" required />
+            <span *ngIf="isValidField('email')" class="text-red-600">
+                {{getFieldError('email')}}
+            </span>
+            <span *ngIf="existeEmail()" class="text-red-600">
+                La direccion email ya se encuentra registrada.
+             </span>
+        </div>
+        <div class="auth__block">
+            <label for="password" class="label">Contraseña</label>
+            <input formControlName="password" type="password" id="password" class="input" placeholder="Contraseña" required />
+            <span *ngIf="isValidField('password')" class="text-red-600">
+                {{getFieldError('password')}}
+            </span>
+        </div>
+        <div class="auth__block">
+            <label for="repassword" class="label">Repetir contraseña</label>
+            <input formControlName="repassword" type="password" id="repassword" class="input" placeholder="Verificar contraseña" required />
+            <span *ngIf="isValidField('repassword')"class="text-red-600">
+                Las contraseñas deben de ser iguales
+           </span>
+        </div>
+        <div class="auth__block">
+            <button class="block w-full btn--dark" type="submit">Crear cuenta</button>
+        </div>
+        <p class="auth__block">
+            <span class="me-2">Ya tienes una cuenta</span>
+            <a [routerLink]="['/auth/login']" class="text-green-500 ">Inicia sesion</a>
+        </p>
+</form>

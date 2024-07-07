@@ -1,0 +1,32 @@
+<section class="jumbotrom">
+    <form [formGroup]="form"  class="jumbotrom__content sm:p-2">
+        <div class="form__select">
+            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoria</label>
+            <select id="countries" formControlName="categoriaId" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value="" selected> Seleccione una categoria</option>
+             
+              @for(categoria of categorias; track categoria.id){
+                <option [value]="categoria.id">{{categoria.nombre}}</option>
+              }
+          </select>
+        </div>
+        <div class="form__select">
+            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alimento</label>
+            <select id="countries" formControlName="alimentoId"  class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option value="" selected> Seleccione un alimento</option>
+                 
+              @for(alimento of alimentos; track alimento.id){
+                <option [value]="alimento.id">{{alimento.nombre}}</option>
+              }
+          </select>
+        </div>
+        <div class="flex items-end">
+            <button type="button" (click)="buscar()" class="btn--dark inline-flex items-center">
+                <svg class="w-4 h-4 me-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
+                  </svg>                  
+                Buscar
+            </button>
+        </div>
+    </form>
+</section>
