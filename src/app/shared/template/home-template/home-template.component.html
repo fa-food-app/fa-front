@@ -44,4 +44,22 @@
         <app-tab-nav [alimento]="alimento" [azucar]="azucar" [aminoacido]="aminoacido"/>
     </div>
     }
+    @if(statuschart){
+    <div class="col-span-12">
+        <h3 class="title mb-5">Propiedades termicas - Temperatura</h3>
+            <div class="mb-5"><app-scatter *ngIf="statuschart"title="Grafica de difusividad  termica" ejey="Difusividad( m²/s )"pointColor="rgb(242 116 116 / 41%)" ejex="Temperatura (°c)" [data]="tempDifusivity"></app-scatter></div>
+            <div class="mb-5"><app-scatter *ngIf="statuschart"title="Grafica de densidad termica"  ejey="Densidad (kg/m³)"      pointColor="rgb(242 116 116 / 41%)" ejex="Temperatura (°c)" [data]="tempDensity"></app-scatter></div>
+            <div class="mb-5"><app-scatter *ngIf="statuschart"title="Grafica de especificidad  termica" ejey="Especificidad (m²/s)"   pointColor="rgb(242 116 116 / 41%)" ejex="Temperatura (°c)" [data]="tempSpecifity"></app-scatter></div>
+            <div class="mb-5"><app-scatter *ngIf="statuschart"title="Grafica de conductividad  termica" ejey="Conductividad (W/(m*k))"pointColor="rgb(242 116 116 / 41%)" ejex="Temperatura (°c)" [data]="tempConductivity"></app-scatter></div>
+    </div>
+    <div class="col-span-12">
+        <h3 class="title mb-5">Propiedades termicas - Humedad</h3>
+            <div class="col-md-6 mb-5"><app-scatter *ngIf="statuschart"title="Grafica de difusividad  termica" ejey="Difusividad (m²/s) " pointColor="rgb(13 110 253 / 25%)" ejex="Humedad (%)"[data]="humDifusivity"></app-scatter></div>
+            <div class="col-md-6 mb-5"><app-scatter *ngIf="statuschart"title="Grafica de densidad termica"  ejey="Densidad (kg/m³)"      pointColor="rgb(13 110 253 / 25%)" ejex="Humedad (%)"[data]="humDensity"></app-scatter></div>
+
+
+            <div class="col-md-6 mb-5"><app-scatter *ngIf="statuschart"title="Grafica de especificidad  termica" ejey="Especificidad (m²/s)" pointColor="rgb(13 110 253 / 25%)"   ejex="Humedad (%)" [data]="humSpecifity"></app-scatter></div>
+            <div class="col-md-6 mb-5"><app-scatter *ngIf="statuschart"title="Grafica de conductividad  termica" ejey="Conductividad (W/(m*k))" pointColor="rgb(13 110 253 / 25%)" ejex="Humedad (%) "[data]="humConductivity"></app-scatter></div>
+    </div>
+    }
 </div>

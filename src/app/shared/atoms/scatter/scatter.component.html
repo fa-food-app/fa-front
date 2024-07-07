@@ -1,0 +1,26 @@
+<div class="card" >
+      <div class="card-body">
+          <h3>{{title}}</h3>
+          <small>{{ejey}}</small>
+          <div style="display: block;">
+           
+            <canvas baseChart
+                  [datasets]="scatterChartDatasets"
+                  [options]="scatterChartOptions"
+               
+                  [type]="'scatter'">
+          </canvas>
+            <small class="d-flex justify-content-end"> {{ejex}}</small>
+          </div>
+    </div>
+  </div>
+
+  <!-- <app-chart-host chartType="scatter">
+    <canvas
+      baseChart
+      [data]="scatterChartData"
+      [options]="scatterChartOptions"
+      [type]="scatterChartType"
+    >
+    </canvas>
+  </app-chart-host> -->

@@ -1,3 +1,3 @@
 export const environment = {
-    url:'http://localhost:3000/api'
+    url:'https://dsgc9nwj23.execute-api.us-east-1.amazonaws.com/api'
 };
